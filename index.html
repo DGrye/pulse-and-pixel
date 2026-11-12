@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse & Pixel | Everyday Tech, Made Easier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">⚡ Pulse & <span>Pixel</span></div>
+    <div class="nav-right">
+      <div class="rewards-badge">
+        🏆 Pulse Rewards: <strong id="user-points">120</strong> pts
+      </div>
+      <button class="cart-btn" id="open-cart-btn">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>POWER UP YOUR EVERYDAY</h1>
+    <p>Affordable, authentic tech accessories in Talavera, Nueva Ecija.</p>
+
+    <!-- USP Feature: Device Compatibility Checker -->
+    <div class="compatibility-box">
+      <label for="device-select">🔍 Check Compatibility for Your Device:</label>
+      <select id="device-select">
+        <option value="all">Show All Products</option>
+        <option value="usbc">iPhone 15/16 & Android (USB-C)</option>
+        <option value="lightning">Older iPhone (Lightning)</option>
+        <option value="laptop">Laptop / PC Setup</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Category Filter Tabs -->
+  <section class="filters">
+    <button class="filter-btn active" data-category="all">All Items</button>
+    <button class="filter-btn" data-category="Charging">Charging & Power</button>
+    <button class="filter-btn" data-category="Audio">Audio</button>
+    <button class="filter-btn" data-category="Phone">Phone Accessories</button>
+    <button class="filter-btn" data-category="Computer">PC & Laptop</button>
+    <button class="filter-btn" data-category="Bundles">🔥 Student Bundles</button>
+  </section>
+
+  <!-- Product Grid (JavaScript will fill this automatically!) -->
+  <main class="container">
+    <div class="product-grid" id="product-grid"></div>
+  </main>
+
+  <!-- Slide-Out Cart & Omnichannel Checkout Modal -->
+  <div class="modal-overlay" id="cart-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>Your Shopping Cart</h2>
+        <button class="close-btn" id="close-cart-btn">&times;</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="checkout-options">
+        <h3>Fulfillment Method</h3>
+        <select id="fulfillment-select">
+          <option value="Store Pickup (Near WalterMart Talavera)">🏪 In-Store Pickup (Free - Ready in 15 mins)</option>
+          <option value="Local Talavera Delivery">🛵 Local Talavera Delivery (+₱40)</option>
+        </select>
+
+        <h3>Payment Method</h3>
+        <select id="payment-select">
+          <option value="GCash / Maya (QR Ph)">📱 GCash / Maya / QR Ph</option>
+          <option value="Cash on Pickup / COD">💵 Cash on Pickup / COD</option>
+          <option value="Debit / Credit Card">💳 Debit / Credit Card</option>
+        </select>
+      </div>
+
+      <div class="cart-summary">
+        <p>Total: <strong id="cart-total">₱0</strong></p>
+        <p class="points-preview">✨ You will earn <strong id="points-earned">0</strong> Pulse Rewards points!</p>
+        <button class="checkout-btn" id="place-order-btn">Place Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Pop-up -->
+  <div class="modal-overlay" id="receipt-modal">
+    <div class="modal-box receipt-box">
+      <h2>✅ Order Confirmed!</h2>
+      <p id="receipt-details"></p>
+      <button class="checkout-btn" id="close-receipt-btn">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
